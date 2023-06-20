@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/setup_constraint_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/phto"
+    android:layout_height="match_parent"
+ >
+
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/setup_image"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="90dp"
+        android:layout_gravity="center"
+        android:src="@drawable/user2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/setup_fullname_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/full_name"
+
+        app:layout_constraintTop_toBottomOf="@id/setup_image"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="25dp"
+        >
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/setup_fullname_et"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            android:layout_width="290dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:inputType="text"
+            android:maxLines="1" />
+    </android.support.design.widget.TextInputLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+    <TextView
+        android:id="@+id/dob_tv"
+        style="@style/TextAppearance.AppCompat.Medium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="12dp"
+        android:textStyle="bold"
+        android:text="Date of birth :"
+        android:textColor="@color/blue"
+
+        app:layout_constraintTop_toBottomOf="@id/setup_fullname_layout" />
+
+    <TextView
+        android:id="@+id/selected_dob_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="01/01/2001"
+        app:layout_constraintStart_toEndOf="@id/dob_tv"
+        app:layout_constraintBottom_toBottomOf="@id/dob_tv"
+
+        android:layout_marginTop="14dp"
+        android:textColor="@color/custom_grey"
+        style="@style/TextAppearance.AppCompat.Large"/>
+
+    <ImageView
+        android:id="@+id/calendar_icon_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:src="@drawable/calendar_icon_blue"
+        app:layout_constraintStart_toEndOf="@id/selected_dob_tv"
+        app:layout_constraintBottom_toBottomOf="@id/selected_dob_tv"
+        android:layout_marginLeft="10dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+    <TextView
+        android:id="@+id/num_code_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+92"
+        style="@style/TextAppearance.AppCompat.Large"
+        android:layout_marginTop="27dp"
+        app:layout_constraintBottom_toBottomOf="@id/india_flag_icon"
+        android:layout_marginLeft="40dp"
+        app:layout_constraintStart_toEndOf="@id/india_flag_icon"
+        />
+
+    <ImageView
+        android:id="@+id/india_flag_icon"
+        android:layout_width="32dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/num_code_tv"
+        app:layout_constraintTop_toBottomOf="@id/dob_tv"
+        android:layout_marginLeft="20dp"
+       app:srcCompat="@drawable/pakistan" />
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/setup_number_layout"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/number"
+
+
+            app:layout_constraintStart_toEndOf="@id/num_code_tv"
+            app:layout_constraintTop_toBottomOf="@id/dob_tv"
+
+            >
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/setup_number_et"
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+
+                android:layout_marginLeft="10dp"
+                android:maxLength="10"
+                android:maxLines="1" />
+        </android.support.design.widget.TextInputLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+    <TextView
+        android:id="@+id/gender_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/gender"
+        app:layout_constraintTop_toBottomOf="@id/india_flag_icon"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="40dp"
+        style="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/setup_gender_rg"
+        />
+    <RadioGroup
+        android:id="@+id/setup_gender_rg"
+        app:layout_constraintBottom_toBottomOf="@id/gender_tv"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toEndOf="@id/setup_gender_rg"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/male_rb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/male"/>
+
+        <RadioButton
+            android:id="@+id/female_rb"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/female"/>
+    </RadioGroup>
+    </LinearLayout>
+
+
+    <android.support.design.button.MaterialButton
+        android:id="@+id/setup_setup_btn"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="290dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@android:color/white"
+        android:backgroundTintMode="multiply"
+        android:padding="12dp"
+
+        android:layout_margin="10dp"
+        android:text="@string/save_account_settings"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:textColor="@android:color/white"
+        app:backgroundTint="@color/purple"
+        app:cornerRadius="5dp"
+        app:rippleColor="@android:color/white"
+
+        />
+
+
+
+
+
+
+
+
+
+
+</LinearLayout>
